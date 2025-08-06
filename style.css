@@ -1,0 +1,737 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: "Merriweather", serif;
+}
+
+body {
+    background: #1F1C2C;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav ul li a {
+    color: white;
+    cursor: pointer;
+}
+
+.nav ul li a:hover {
+    color: #928DAB;
+}
+
+.nav p {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav i {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    display: none;
+}
+
+/* ////////////////////// */
+header {
+    padding: 10px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    align-items: center;
+}
+
+header img {
+    border-radius: 50%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.headerDescrip {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.headerDescrip h1,
+.headerDescrip p {
+    color: white;
+}
+
+.headerDescrip h2 {
+    color: #928DAB;
+}
+
+.btnheader {
+    display: flex;
+    gap: 30px;
+}
+
+.btnheader a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 70px;
+    background: none;
+    border-radius: 5px;
+    color: #928DAB;
+    border: 2px solid #928DAB;
+}
+
+.btnheader a:hover {
+    color: #1F1C2C;
+    background: #928DAB;
+}
+
+.headerDescrip ul {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerDescrip ul li a {
+    font-size: 20px;
+    padding: 10px;
+    color: #928DAB;
+    background: none;
+    border-radius: 50px;
+    border: 2px solid #928DAB;
+}
+
+.headerDescrip ul li a:hover {
+    color: #1F1C2C;
+    background: #928DAB;
+}
+
+/* *************************************about****** */
+.aboutMe {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.aboutContent h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.aboutContent h1 span {
+    color: #928DAB;
+}
+
+.aboutContent h2,
+.aboutContent p {
+    color: white;
+}
+
+.aboutContent p {
+    text-align: center;
+}
+
+.imageAbout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border-left: 3px solid #928DAB;
+    border-right: 3px solid #928DAB;
+}
+
+.imageAbout img {
+    padding: 2px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #928DAB;
+}
+
+.aboutContent a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 80px;
+    background: white;
+    border-radius: 5px;
+    color: #1F1C2C;
+}
+
+/* parcour */
+.parcour {
+    padding: 10px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.parcour h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.parcour h1 span {
+    color: #928DAB;
+}
+
+.study {
+    opacity: 0;
+    /* Invisible au chargement */
+    transform: translateY(50px);
+    /* Déplacement vers le bas pour l'animation */
+    transition: opacity 0.9s ease, transform 0.5s ease;
+}
+
+.study.visible {
+    opacity: 1;
+    /* Visible lorsque la classe 'visible' est ajoutée */
+    transform: translateY(0);
+    /* Retour à la position normale */
+}
+
+.studyContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 20px;
+}
+
+.studyWay {
+    transition: 0.5s ease-in-out;
+    padding: 10px;
+    border: 3px solid #928DAB;
+}
+
+.studyWay:hover {
+    animation: flash 0.5s ease-in-out;
+}
+
+.studyWay:hover .p {
+    color: white;
+}
+
+@keyframes flash {
+    0% {
+        background: transparent;
+    }
+
+    50% {
+        background: #928DAB;
+    }
+
+    100% {
+        background: transparent;
+    }
+}
+
+.studyWay .p {
+    color: #928DAB;
+}
+
+.studyWay h5,
+.studyWay p {
+    color: white;
+}
+
+/* *****************competence */
+.competence {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.competence h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.competence h1 span {
+    color: #928DAB;
+}
+
+.skillsWay {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 20px;
+}
+
+.skills {
+    padding: 10px;
+    border: 3px solid #928DAB;
+
+}
+
+#skill2 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#skill1 {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.html ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.html ul li {
+    color: white;
+}
+
+.html {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.percentHtml {
+    text-align: center;
+    height: 15px;
+    border: 3px solid #928DAB;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px 3px 3px 3px;
+}
+
+.percert1 {
+    border-radius: 5px;
+    height: 14px;
+    background: linear-gradient(to right, #928DAB 95%, #1F1C2C 5%);
+}
+
+.percentCss {
+    text-align: center;
+    height: 15px;
+    border: 3px solid #928DAB;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px 3px 3px 3px;
+}
+
+.percert2 {
+    border-radius: 5px;
+    height: 14px;
+    background: linear-gradient(to right, #928DAB 85%, #1F1C2C 15%);
+}
+
+.percentJava {
+    text-align: center;
+    height: 15px;
+    border: 3px solid #928DAB;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px 3px 3px 3px;
+}
+
+.percert3 {
+    border-radius: 5px;
+    height: 14px;
+    background: linear-gradient(to right, #928DAB 80%, #1F1C2C 20%);
+}
+
+.percentPhp {
+    text-align: center;
+    height: 15px;
+    border: 3px solid #928DAB;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px 3px 3px 3px;
+}
+
+.percert4 {
+    border-radius: 5px;
+    height: 14px;
+    background: linear-gradient(to right, #928DAB 80%, #1F1C2C 20%);
+}
+
+.percentLaravel {
+    text-align: center;
+    height: 15px;
+    border: 3px solid #928DAB;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px 3px 3px 3px;
+}
+
+.percert5 {
+    border-radius: 5px;
+    height: 14px;
+    background: linear-gradient(to right, #928DAB 85%, #1F1C2C 15%);
+}
+
+.percentAngular {
+    text-align: center;
+    height: 15px;
+    border: 3px solid #928DAB;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px 3px 3px 3px;
+}
+
+.percert6 {
+    border-radius: 5px;
+    height: 14px;
+    background: linear-gradient(to right, #928DAB 75%, #1F1C2C 25%);
+}
+
+/* **********************************contact */
+.contact {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.contact h1 span {
+    color: #928DAB;
+}
+
+.contact form {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.callMe input {
+    color: white;
+    font-weight: bold;
+    margin: 20px;
+    padding: 20px;
+    width: 400px;
+    background: #1F1C2C;
+    border: none;
+    border: 3px solid #928DAB;
+}
+
+.callMe input::placeholder {
+    color: white;
+}
+
+.callMe textarea::placeholder {
+    color: white;
+}
+
+.callMe textarea {
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    width: 895px;
+    height: 200px;
+    background: #1F1C2C;
+    border: 3px solid #928DAB;
+}
+
+.callMe button {
+    width: 100px;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    color: #1F1C2C;
+    border: none;
+    cursor: pointer;
+}
+
+/* ****************************copyright */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #928DAB;
+}
+
+footer p {
+    color: white;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: none;
+    border-radius: 5px;
+    color: #1F1C2C;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+/* ****************************************projet */
+.projet {
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.projet h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.projet h1 span {
+    color: #928DAB;
+}
+
+#lien {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 80px;
+    background: white;
+    border-radius: 5px;
+    color: #1F1C2C;
+}
+
+.projetContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 20px;
+}
+
+.projetDescript {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border: 3px solid #928DAB;
+}
+
+.projetDescript a {
+    font-size: 20px;
+   text-decoration: underline;
+}
+
+.projetDescript p {
+    color: white;
+}
+
+.projetDescript h2 {
+    color: #928DAB;
+}
+
+/* ****************************media */
+@media (max-width:1290px) {}
+
+@media (max-width:1069px) {
+    .callMe textarea {
+        color: white;
+        font-weight: bold;
+        padding: 20px;
+        width: 500px;
+        height: 200px;
+        background: #1F1C2C;
+        border: 3px solid #928DAB;
+    }
+
+    .callMe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width:884px) {
+    .nav ul {
+        transition: 0.5s all ease;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-direction: column;
+        background: #1F1C2C;
+        padding: 20px 20px;
+        position: fixed;
+        right: -100%;
+        border-radius: 10px;
+        top: 10%;
+        border: 2px solid #928DAB;
+    }
+
+    .nav ul li a {
+        padding: 10px;
+    }
+
+    .nav ul li a:hover {
+        background: #1F1C2C;
+        color: #928DAB;
+    }
+
+    #exit {
+        margin-right: -5rem;
+    }
+
+    .nav i {
+        font-weight: bold;
+        font-size: 1.5rem;
+        display: block;
+    }
+}
+
+@media (max-width:835px) {
+    header img {
+        margin-top: 7px;
+        height: 350px;
+    }
+}
+
+@media (max-width:610px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:430px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header img {
+        margin-top: 7px;
+        height: 200px;
+    }
+
+    header h1,
+    header h2 {
+        font-size: 20px;
+    }
+
+    .aboutMe h2 {
+        font-size: 20px;
+    }
+
+    .callMe input,
+    .callMe textarea {
+        width: 70%;
+    }
+
+    .callMe textarea {
+        height: 100px;
+    }
+
+    footer p {
+        font-size: 10px;
+    }
+    #monP{
+        text-align: justify;
+    }
+}
+
+@media (max-width:385px) {
+    .nav .logoName {
+        font-size: 15px;
+    }
+
+    header h1,
+    header h2 {
+        font-size: 15px;
+    }
+
+    .aboutMe p {
+        text-align: justify;
+    }
+
+    .skillsWay {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width:325px) {
+
+    .aboutMe h1,
+    .parcour h1,
+    .competence h1,
+    .contact h1 {
+        font-size: 20px;
+    }
+
+    .aboutMe h2 {
+        font-size: 15px;
+    }
+
+    .studyContent {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

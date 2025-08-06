@@ -661,13 +661,13 @@ footer a {
 
 @media (max-width:595px) {
 
-    .callMe input,
-    .callMe textarea {
+    .callMe input{
         width: 100%;
     }
 
     .callMe textarea {
         height: 100px;
+        width: 280px;
     }
 }
 
@@ -696,8 +696,7 @@ footer a {
         font-size: 20px;
     }
 
-    .callMe input,
-    .callMe textarea {
+    .callMe input {
         width: 100%;
     }
 

@@ -570,7 +570,7 @@ footer a {
 
 .projetDescript a {
     font-size: 20px;
-   text-decoration: underline;
+    text-decoration: underline;
 }
 
 .projetDescript p {
@@ -599,6 +599,13 @@ footer a {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+}
+
+@media (max-width:920px) {
+    header img {
+        margin-top: 7px;
+        height: 450px;
     }
 }
 
@@ -652,8 +659,25 @@ footer a {
     }
 }
 
+@media (max-width:595px) {
+
+    .callMe input,
+    .callMe textarea {
+        width: 100%;
+    }
+
+    .callMe textarea {
+        height: 100px;
+    }
+}
+
 @media (max-width:430px) {
+    .nav {
+        padding: 20px 40px;
+    }
+
     header {
+        padding: 10px 40px;
         display: flex;
         flex-direction: column;
     }
@@ -674,7 +698,7 @@ footer a {
 
     .callMe input,
     .callMe textarea {
-        width: 70%;
+        width: 100%;
     }
 
     .callMe textarea {
@@ -684,7 +708,8 @@ footer a {
     footer p {
         font-size: 10px;
     }
-    #monP{
+
+    #monP {
         text-align: justify;
     }
 }

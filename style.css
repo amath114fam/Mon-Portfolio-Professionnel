@@ -660,9 +660,8 @@ footer a {
 }
 
 @media (max-width:595px) {
-
-    .callMe input{
-        width: 100%;
+    .callMe input {
+        width: 280px;
     }
 
     .callMe textarea {
@@ -697,11 +696,14 @@ footer a {
     }
 
     .callMe input {
-        width: 100%;
+        width: 280px;
+        margin-left: 5px;
     }
 
     .callMe textarea {
+        margin-right: 15px;
         height: 100px;
+        width: 280px;
     }
 
     footer p {

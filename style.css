@@ -659,7 +659,7 @@ footer a {
     }
 }
 
-@media (max-width:595px) {
+@media (max-width:600px) {
     .callMe input {
         width: 280px;
     }
@@ -715,7 +715,7 @@ footer a {
     }
 }
 
-@media (max-width:385px) {
+@media (max-width:394px) {
     .nav .logoName {
         font-size: 15px;
     }
@@ -735,6 +735,16 @@ footer a {
         gap: 20px;
     }
 
+     .callMe input {
+        width: 200px;
+        margin-left: 16px;
+    }
+
+    .callMe textarea {
+        margin-right: 4px;
+        height: 100px;
+        width: 200px;
+    }
     footer {
         display: flex;
         flex-direction: column;
@@ -759,5 +769,15 @@ footer a {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+      .callMe input {
+        width: 200px;
+        margin-left: -2px;
+    }
+
+    .callMe textarea {
+        margin-left: -15px;
+        height: 100px;
+        width: 200px;
     }
 }

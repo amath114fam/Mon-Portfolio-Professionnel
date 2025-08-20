@@ -20,7 +20,21 @@ a {
     text-decoration: none;
 }
 
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    /* Vert */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0.9;
+    transition: opacity 0.5s ease;
+}
 .nav {
+    transition: 0.5s ease-in-out;
     padding: 20px 50px;
     display: flex;
     align-items: center;
@@ -29,6 +43,10 @@ a {
     top: 0;
     bottom: 0;
     z-index: 1000;
+}
+
+.ulActive {
+    right: 8%;
 }
 
 .nav ul {
@@ -611,16 +629,17 @@ footer a {
 
 @media (max-width:884px) {
     .nav ul {
-        transition: 0.5s all ease;
+        transition: 0.5s ease-in-out;
         display: flex;
         align-items: center;
+        position: fixed;
         gap: 1rem;
         flex-direction: column;
         background: #1F1C2C;
-        padding: 20px 20px;
-        position: fixed;
+        padding: 20px 0px;
         right: -100%;
         border-radius: 10px;
+        width: 90%;
         top: 10%;
         border: 2px solid #928DAB;
     }
@@ -635,7 +654,7 @@ footer a {
     }
 
     #exit {
-        margin-right: -5rem;
+        display: none;
     }
 
     .nav i {
@@ -735,7 +754,7 @@ footer a {
         gap: 20px;
     }
 
-     .callMe input {
+    .callMe input {
         width: 200px;
         margin-left: 16px;
     }
@@ -745,6 +764,7 @@ footer a {
         height: 100px;
         width: 200px;
     }
+
     footer {
         display: flex;
         flex-direction: column;
@@ -770,7 +790,8 @@ footer a {
         flex-direction: column;
         gap: 10px;
     }
-      .callMe input {
+
+    .callMe input {
         width: 200px;
         margin-left: -2px;
     }

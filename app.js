@@ -87,20 +87,33 @@ function sendMail() {
         message: document.getElementById("object").value,
         phone: document.getElementById("phone").value,
     }
-    emailjs.send("service_ivh5i3r", "template_bs7eiv6", params).then(alert("Message envoyé avec succès"));
+    emailjs.send("service_ivh5i3r", "template_bs7eiv6", params);
+    showNotification();
 }
 
 const icon = document.getElementById("icon");
 const xmark = document.getElementById("exit");
-const ul = document.querySelector(".nav ul");
+const ul = document.querySelector("#ul");
+
 icon.addEventListener("click", () => {
     ul.style.right = "0%";
-    icon.style.display = "none"
+    icon.style.display = "none";
+    xmark.style.display = "block";
+    xmark.addEventListener("click",()=>{
+        ul.style.right = "-100%";
+        icon.style.display = "block";
+        xmark.style.display = "none";
+    })
 })
-xmark.addEventListener("click", () => {
-    ul.style.right = "-100%";
-    icon.style.display = "block"
-})
+function showNotification() {
+    const notification = document.createElement("div");
+    notification.classList.add("notification");
+    notification.textContent = 'Message envoyé avec succès';
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
 
 
 
